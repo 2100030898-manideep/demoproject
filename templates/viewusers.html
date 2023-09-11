@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+
+<h3 align="center">Django with Form Handling, MVT, Template Inheritance, Session, Cookies, Email, ModelForms</h3>
+<hr><hr>
+
+<a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;
+<a href="{% url 'formdemo' %}">Form Handling</a>&nbsp;&nbsp;
+<a href="{% url 'logindemo' %}">Login Demo</a>&nbsp;&nbsp;
+<a href="{% url 'addemployee' %}">Add Employee</a>&nbsp;&nbsp;
+
+<a href="{% url 'registration' %}">Registration</a>&nbsp;&nbsp;
+<a href="{% url 'userlogin' %}">Login</a>&nbsp;&nbsp;
+<a href="{% url 'viewusers' %}">View Users</a>&nbsp;&nbsp;
+
+<br><br>
+
+<h2 align="center">Registered Users</h2>
+
+Total Users = {{count}} <br><br>
+
+<table align="center" border="2">
+    <tr>
+        <td>ID</td>
+        <td>Full Name</td>
+        <td>Gender</td>
+        <td>DOB</td>
+        <td>EMAIL</td>
+        <td>USERNAME</td>
+        <td>CONTACT NO</td>
+        <td>LOCATION</td>
+        <td>Registration Time</td>
+    </tr>
+    {% for user in users %}
+<tr>
+    <td>{{user.id}}</td>
+    <td>{{user.fullname}}</td>
+    <td>{{user.gender}}</td>
+    <td>{{user.dateofbirth}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.contact}}</td>
+    <td>{{user.location}}</td>
+    <td>{{user.registrationtime}}</td>
+
+</tr>
+
+    {% endfor %}
+
+
+</table>
+
+
+</body>
+</html>
